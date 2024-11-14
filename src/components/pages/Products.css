@@ -1,0 +1,113 @@
+/* App.css (or your custom CSS file) */
+
+.product-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 20px;
+}
+
+.product-price {
+  font-size: 18px; /* Increase font size for the price */
+  color: #007bff; /* Give the price a distinctive color */
+}
+
+h2 {
+  width: fit-content;
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 0;
+}
+
+.product {
+  position: relative;
+  width: 200px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+.new-badge {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: #42b72a; /* Green background color for "New" badge */
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.buy-button {
+  position: absolute; /* Position the button absolutely within the product container */
+  bottom: 10px;
+  right: 10px;
+  background-color: #007bff;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  opacity: 0; /* Initially, the button is hidden */
+  transition: opacity 0.2s; /* Add a smooth transition effect */
+}
+
+.product-category {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.product:hover {
+  transform: scale(1.05); /* Scale up the product on hover */
+}
+
+.product:hover .buy-button {
+  opacity: 1; /* Show the button on hover */
+}
+
+.product img {
+  max-width: 100%;
+  height: auto;
+}
+
+.category-products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+h3 {
+  font-size: 20px; /* Increase font size for the title */
+  font-weight: bold; /* Make the title bold */
+  color: #333; /* Adjust the color as needed */
+}
+
+p {
+  margin: 0;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .product-list {
+    flex-direction: column;
+  }
+  .product {
+    width: 100%;
+    /* Adjust other styles as needed for smaller screens */
+  }
+
+  /* Make the product bigger when there's only one in the category */
+  .category-products {
+    display: flex;
+    gap: 10px;
+  }
+
+  .category-products > .product:last-child {
+    width: 100%;
+    /* Adjust other styles as needed for the single product */
+  }
+}
